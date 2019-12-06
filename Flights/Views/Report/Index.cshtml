@@ -1,0 +1,117 @@
+﻿@model IEnumerable<FlightHistoryViewModel>
+
+@{
+    ViewData["Title"] = "Flights History";
+}
+
+
+<div>
+    <h2>@ViewData["Title"]</h2>
+</div>
+<hr />
+
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureAirportCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureAirportName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationAirportCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationAirportName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelNeeded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TakeOffEffort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Action)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionDate)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.EventId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureAirportCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureAirportName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationAirportCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationAirportName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelNeeded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TakeOffEffort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Action)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActionDate)
+            </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="customerHistory" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Customer Data History</h4>
+            </div>
+            <div class="modal-body">
+                <p id="customerHistoryData"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

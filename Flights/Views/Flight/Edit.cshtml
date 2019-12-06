@@ -1,0 +1,74 @@
+@model FlightViewModel
+
+@{
+    ViewData["Title"] = "Edit Flight";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <hr />
+        
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="DepartureAirportCode" />
+        <input type="hidden" asp-for="DestinationAirportCode" />
+       
+       
+       
+        <div class="form-group row">
+            <label asp-for="DepartureAirportName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input readonly asp-for="DepartureAirportName" class="form-control" placeholder=@Html.DisplayNameFor(model => model.DepartureAirportName) />
+                <span asp-validation-for="DepartureAirportName" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label asp-for="DestinationAirportName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input readonly asp-for="DestinationAirportName" class="form-control" placeholder=@Html.DisplayNameFor(model => model.DestinationAirportName) />
+                <span asp-validation-for="DestinationAirportName" class="text-danger"></span>
+            </div>
+        </div>
+       
+        <div class="form-group row">
+            <label asp-for="FlightTime" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="FlightTime" class="form-control" placeholder=@Html.DisplayNameFor(model => model.FlightTime) />
+                <span asp-validation-for="FlightTime" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label asp-for="TakeOffEffort" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="TakeOffEffort" class="form-control" placeholder=@Html.DisplayNameFor(model => model.TakeOffEffort) />
+                <span asp-validation-for="TakeOffEffort" class="text-danger"></span>
+            </div>
+        </div>
+       
+        <div class="form-group row">
+            <label asp-for="FuelNeeded" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="FuelNeeded" class="form-control" placeholder=@Html.DisplayNameFor(model => model.FuelNeeded) />
+                <span asp-validation-for="FuelNeeded" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label asp-for="Distance" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="Distance" class="form-control" placeholder=@Html.DisplayNameFor(model => model.Distance) />
+                <span asp-validation-for="Distance" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="offset-sm-2">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Back</a>
+            </div>
+        </div>
+    </div>
+</form>
